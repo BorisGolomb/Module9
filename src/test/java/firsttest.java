@@ -47,6 +47,7 @@ public class firsttest {
                 .until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'bgo-t-1610-1')]"))).click();
         driver.findElement(By.xpath("//input[@id='markup_inner:incl:topic_name']")).sendKeys("selenium_test");
         driver.findElement(By.xpath("//label[contains(text(), 'Description')]/ancestor::td/following-sibling::td//textarea")).sendKeys("selenium_test");
+        driver.findElement(By.xpath("//*[@id='inner:incl:supplier_search_panel_grid_id']//button")).click();
 
 
 
