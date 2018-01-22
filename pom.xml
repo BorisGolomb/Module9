@@ -7,10 +7,21 @@
     <groupId>Selenium1</groupId>
     <artifactId>Selenium1</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <systemPropertyVariables>
+                        <sut.url>http://evbyminsd2156.minsk.epam.com/logon/logonServlet</sut.url>
+                    </systemPropertyVariables>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
-    <properties>
-        <sut.url>http://evbyminsd2156.minsk.epam.com/logon/logonServlet</sut.url>
-    </properties>
+
 
     <dependencies>
         <dependency>

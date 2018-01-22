@@ -3,6 +3,7 @@ package com.epam.cdp.slon.test;
 import com.epam.cdp.slon.model.User;
 import com.epam.cdp.slon.model.UserFactory;
 import com.epam.cdp.slon.page.LoginPage;
+import com.epam.cdp.slon.util.TestConfig;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -23,8 +24,7 @@ public class FirstTest extends BaseTest {
     @Test
     public void testSrcCreatingBo(){
 
-
-
+        String applicationUrl = TestConfig.getApplicationUrl();
         User user = UserFactory.getUser();
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login(user.getUsername(), user.getPassword());
