@@ -34,8 +34,9 @@ public class NavigationPage extends BasePage {
     }
 
     public class SupplyOnServices {
-        public void openActioManagement() {
+        public CreateApPage openActioManagement() {
             driver.findElement(By.xpath("//div[@templateid='navbarSubmenuItemText'][text()='Action Management']")).click();
+            return new CreateApPage(driver);
         }
     }
 }
