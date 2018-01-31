@@ -19,7 +19,8 @@ public abstract class BaseTest {
         System.setProperty("webdriver.firefox.logfile", "/dev/null");
         FirefoxOptions options = new FirefoxOptions();
         driver = new FirefoxDriver(options);
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get(TestConfig.getApplicationUrl());
     }
 

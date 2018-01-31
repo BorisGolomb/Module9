@@ -14,10 +14,11 @@ public class TopicService extends BaseService {
     public void createTopic(Topic topic){
 
         AddCustomerAMPage addCustomerAMPage =  new NavigationPage(driver).openSupplyonServices().openActioManagement().craeteTopicFromTemlate(topic.getTemplateName());
-        addCustomerAMPage.EnterName(topic.getName());
-        addCustomerAMPage.EnterDescription(topic.getDescription());
-        addCustomerAMPage.SearchSupplier();
-        addCustomerAMPage.SearchSupplierResponsible();
+        addCustomerAMPage.enterName(topic.getName());
+        addCustomerAMPage.enterDescription(topic.getDescription());
+        addCustomerAMPage.searchSupplier().searchRecord(topic.getSupplier());
+        addCustomerAMPage.searchSupplierResponsible().searchRecord(topic.getSupplierResponsible());
+        addCustomerAMPage.save();
 
     }
 

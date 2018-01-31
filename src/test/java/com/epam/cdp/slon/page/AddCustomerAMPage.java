@@ -18,29 +18,34 @@ public class AddCustomerAMPage extends BasePage {
     @FindBy(xpath = "//label[contains(text(), 'Description')]/ancestor::td/following-sibling::td//textarea")
     private WebElement descriptionInput;
 
-    @FindBy(xpath ="//class[x-form-text x-form-field so-input-markup  x-form-empty-field]" )
+
+    @FindBy(xpath = "//button[text()='Save']")
+    private WebElement saveButton;
 
 
-    public AddCustomerAMPage(WebDriver driver, WebElement name) {
+    public AddCustomerAMPage(WebDriver driver) {
         super(driver);
     }
 
-    public void SearchSupplier() {
+    public SearchPopUpPage searchSupplier() {
         supplierButton.click();
-        return;
+        return new SearchPopUpPage(driver);
     }
 
-    public void SearchSupplierResponsible() {
+    public SearchPopUpPage  searchSupplierResponsible() {
         supplierResponsible.click();
-        return;
+        return new SearchPopUpPage(driver);
 
     }
-    public AddCustomerAMPage EnterName(String name) {
+    public AddCustomerAMPage enterName(String name) {
         nameInput.sendKeys(name);
         return this;
     }
-    public AddCustomerAMPage EnterDescription(String description) {
+    public AddCustomerAMPage enterDescription(String description) {
         descriptionInput.sendKeys(description);
         return this;
+    }
+    public void save(){
+        saveButton.click();
     }
 }
