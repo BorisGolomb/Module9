@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CreateApPage extends BasePage {
@@ -18,7 +19,7 @@ public class CreateApPage extends BasePage {
     }
 
     public AddCustomerAMPage craeteTopicFromTemlate(String templateName) {
-    new WebDriverWait()
+        new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(actionplanDropdown));
         actionplanDropdown.click();
         driver.findElement(By.xpath(String.format("//span[contains(text(),'%s')]", templateName ))) .click();
         return new AddCustomerAMPage(driver);
