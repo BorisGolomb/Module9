@@ -23,7 +23,7 @@ public abstract class BaseTest {
     protected WebDriver driver;
     private static Wait<WebDriver> wait;
     private static DesiredCapabilities capabillities;
-    private static WebDriver driver;
+
 
 
 
