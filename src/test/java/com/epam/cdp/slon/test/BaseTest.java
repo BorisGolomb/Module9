@@ -22,7 +22,7 @@ public abstract class BaseTest {
 
     protected WebDriver driver;
     private static Wait<WebDriver> wait;
-    private static DesiredCapabilities capabillities;
+
 
 
 
@@ -34,9 +34,9 @@ public abstract class BaseTest {
         FirefoxOptions options = new FirefoxOptions();
         driver = new FirefoxDriver(options);
 
-        capabillities = DesiredCapabilities.firefox();
+        DesiredCapabilities capabillities = DesiredCapabilities.firefox();
 
-        driver = new RemoteWebDriver(new URL("http://10.6.150.238:5555"), capabillities);
+        driver = new RemoteWebDriver(new URL("http://localhost:4444"), capabillities);
         capabillities.setBrowserName("firefox");
         wait = new WebDriverWait(driver, 6000);
         driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
