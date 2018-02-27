@@ -18,6 +18,10 @@ public class HubTest extends BaseTest {
         loginPage.login(user.getUsername(), user.getPassword());
         ControlPoint controlPoint;
         controlPoint = new ControlPoint(driver);
+        controlPoint.selectDays(5, 10);
+
+
+        
 
 
     }
