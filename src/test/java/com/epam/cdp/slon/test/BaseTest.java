@@ -29,14 +29,14 @@ public abstract class BaseTest {
 
     @BeforeClass
     public void setup() throws MalformedURLException {
-        System.setProperty("webdriver.gecko.driver", "./src/test/resources/geckodriver.exe");
-        System.setProperty("webdriver.firefox.logfile", "/dev/null");
-        FirefoxOptions options = new FirefoxOptions();
-        driver = new FirefoxDriver(options);
+        //System.setProperty("webdriver.gecko.driver", "./src/test/resources/geckodriver.exe");
+        //System.setProperty("webdriver.firefox.logfile", "/dev/null");
+        //FirefoxOptions options = new FirefoxOptions();
+        //driver = new FirefoxDriver(options);
 
         DesiredCapabilities capabillities = DesiredCapabilities.firefox();
 
-        driver = new RemoteWebDriver(new URL("http://localhost:4444"), capabillities);
+        driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabillities);
         capabillities.setBrowserName("firefox");
         wait = new WebDriverWait(driver, 6000);
         driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
