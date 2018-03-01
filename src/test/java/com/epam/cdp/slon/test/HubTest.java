@@ -5,7 +5,9 @@ import com.epam.cdp.slon.model.UserFactory;
 import com.epam.cdp.slon.page.ControlPoint;
 import com.epam.cdp.slon.page.LoginPage;
 import com.epam.cdp.slon.util.TestConfig;
+import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 public class HubTest extends BaseTest {
 
@@ -19,11 +21,12 @@ public class HubTest extends BaseTest {
         ControlPoint controlPoint;
         controlPoint = new ControlPoint(driver);
         controlPoint.selectDays(5, 10);
+        int startDay = controlPoint.getStartDay();
 
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertEquals(startDay, 5, "Start day is incorrect");
 
-        
-
-
+        softAssert.assertAll();
     }
 
 
