@@ -33,4 +33,8 @@ public class ControlPoint extends BasePage {
     public int getStartDay() {
         return executeJavaScript("return angular.element(document.querySelector(\"[ng-controller=SelectRangeCtrl]\")).scope().selectedDays[0]._i.day");
     }
+
+    public int getEndDay() {
+        return executeJavaScript("return angular.element(document.querySelector(\"[ng-controller=SelectRangeCtrl]\")).scope().selectedDays[daysLength - 1]._i.day //last day");
+    }
 }

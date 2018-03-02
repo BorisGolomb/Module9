@@ -22,9 +22,11 @@ public class HubTest extends BaseTest {
         controlPoint = new ControlPoint(driver);
         controlPoint.selectDays(5, 10);
         int startDay = controlPoint.getStartDay();
+        int endDay = controlPoint.getEndDay()
 
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertEquals(startDay, 5, "Start day is incorrect");
+        softAssert.assertEquals(endDay, 10, "End day is incorrect");
 
         softAssert.assertAll();
     }
