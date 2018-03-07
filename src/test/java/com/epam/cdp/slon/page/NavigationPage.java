@@ -10,9 +10,7 @@ import static org.openqa.selenium.By.cssSelector;
 
 public class NavigationPage extends BasePage {
 
-    public NavigationPage(WebDriver driver) {
-        super(driver);
-    }
+
 //    @FindBy(xpath = "//div[text()='SupplyOn Services']/ancestor::li[@class='navBarTopMenuItemContainer']")
 //    private WebElement supplierButton;
 
@@ -27,16 +25,16 @@ public class NavigationPage extends BasePage {
 
     public SupplyOnServices openSupplyonServices() {
 
-        WebElement element = driver.findElement(By.xpath("//div[text()='SupplyOn Services']/ancestor::li[@class='navBarTopMenuItemContainer']"));
-        new Actions(driver).moveToElement(element).build().perform();
+        WebElement element = getDriver().findElement(By.xpath("//div[text()='SupplyOn Services']/ancestor::li[@class='navBarTopMenuItemContainer']"));
+        new Actions(getDriver()).moveToElement(element).build().perform();
 
         return new SupplyOnServices();
     }
 
     public class SupplyOnServices {
         public CreateApPage openActioManagement() {
-            driver.findElement(By.xpath("//div[@templateid='navbarSubmenuItemText'][text()='Action Management']")).click();
-            return new CreateApPage(driver);
+           getDriver().findElement(By.xpath("//div[@templateid='navbarSubmenuItemText'][text()='Action Management']")).click();
+            return new CreateApPage();
         }
     }
 }

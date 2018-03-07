@@ -1,20 +1,25 @@
 package com.epam.cdp.slon.page;
 
+import com.epam.cdp.slon.service.WebdriverHolder;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
 public abstract class BasePage {
 
-    protected final WebDriver driver;
+    protected WebDriver getDriver(){
+        return WebdriverHolder.getInstance();
+    }
 
-    public BasePage(WebDriver driver) {
-        PageFactory.initElements(driver, this);
-        this.driver = driver;
+
+
+    public BasePage() {
+        PageFactory.initElements(getDriver(), this);
+
     }
 
     public void waitForAngular() {
-        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        JavascriptExecutor executor = (JavascriptExecutor)getDriver();
         executor.executeAsyncScript("angular.element(document.querySelector('*[ng-app]')).injector().get('$browser').notifyWhenNoOutstandingRequests(arguments[arguments.length - 1]);");
     }
 

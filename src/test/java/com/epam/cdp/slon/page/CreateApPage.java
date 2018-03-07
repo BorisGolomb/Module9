@@ -14,15 +14,13 @@ public class CreateApPage extends BasePage {
 
 
 
-    public CreateApPage(WebDriver driver) {
-        super(driver);
-    }
+
 
     public AddCustomerAMPage craeteTopicFromTemlate(String templateName) {
-        new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(actionplanDropdown));
+        new WebDriverWait(getDriver(), 20).until(ExpectedConditions.elementToBeClickable(actionplanDropdown));
         actionplanDropdown.click();
-        driver.findElement(By.xpath(String.format("//span[contains(text(),'%s')]", templateName ))) .click();
-        return new AddCustomerAMPage(driver);
+        getDriver().findElement(By.xpath(String.format("//span[contains(text(),'%s')]", templateName ))) .click();
+        return new AddCustomerAMPage();
     }
 
 

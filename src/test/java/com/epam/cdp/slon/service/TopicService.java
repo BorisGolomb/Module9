@@ -7,13 +7,12 @@ import org.openqa.selenium.WebDriver;
 
 public class TopicService extends BaseService {
 
-    public TopicService(WebDriver driver) {
-        super(driver);
-    }
+
+
 
     public void createTopic(Topic topic){
 
-        AddCustomerAMPage addCustomerAMPage =  new NavigationPage(driver).openSupplyonServices().openActioManagement().craeteTopicFromTemlate(topic.getTemplateName());
+        AddCustomerAMPage addCustomerAMPage =  new NavigationPage().openSupplyonServices().openActioManagement().craeteTopicFromTemlate(topic.getTemplateName());
         addCustomerAMPage.enterName(topic.getName());
         addCustomerAMPage.enterDescription(topic.getDescription());
         addCustomerAMPage.searchSupplier().searchRecord(topic.getSupplier());

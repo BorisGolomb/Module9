@@ -23,18 +23,16 @@ public class AddCustomerAMPage extends BasePage {
     private WebElement saveButton;
 
 
-    public AddCustomerAMPage(WebDriver driver) {
-        super(driver);
-    }
+
 
     public SearchPopUpPage searchSupplier() {
         supplierButton.click();
-        return new SearchPopUpPage(driver);
+        return new SearchPopUpPage();
     }
 
     public SearchPopUpPage  searchSupplierResponsible() {
         supplierResponsible.click();
-        return new SearchPopUpPage(driver);
+        return new SearchPopUpPage();
 
     }
     public AddCustomerAMPage enterName(String name) {

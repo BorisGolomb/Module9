@@ -23,14 +23,12 @@ public class SearchPopUpPage extends BasePage{
     private WebElement okButton;
 
 
-    public SearchPopUpPage(WebDriver driver) {
-        super(driver);
-    }
+
 
     public void searchRecord(String text){
         searchInput.sendKeys(text);
         searchButton.click();
-        new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(firstRadioButton));
+        new WebDriverWait(getDriver(), 20).until(ExpectedConditions.elementToBeClickable(firstRadioButton));
         firstRadioButton.click();
         okButton.click();
 
