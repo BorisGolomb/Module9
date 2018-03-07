@@ -1,12 +1,9 @@
 package com.epam.cdp.slon.page;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.util.concurrent.TimeUnit;
 
 public class SearchPopUpPage extends BasePage{
 
@@ -28,7 +25,7 @@ public class SearchPopUpPage extends BasePage{
     public void searchRecord(String text){
         searchInput.sendKeys(text);
         searchButton.click();
-        new WebDriverWait(getDriver(), 20).until(ExpectedConditions.elementToBeClickable(firstRadioButton));
+        new WebDriverWait(getDriver("evbyminsd2156.minsk.epam.com/spin/searchControlPoint.do?primaryKey=2021826"), 20).until(ExpectedConditions.elementToBeClickable(firstRadioButton));
         firstRadioButton.click();
         okButton.click();
 

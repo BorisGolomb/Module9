@@ -1,7 +1,6 @@
 package com.epam.cdp.slon.page;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -17,9 +16,9 @@ public class CreateApPage extends BasePage {
 
 
     public AddCustomerAMPage craeteTopicFromTemlate(String templateName) {
-        new WebDriverWait(getDriver(), 20).until(ExpectedConditions.elementToBeClickable(actionplanDropdown));
+        new WebDriverWait(getDriver("evbyminsd2156.minsk.epam.com/spin/searchControlPoint.do?primaryKey=2021826"), 20).until(ExpectedConditions.elementToBeClickable(actionplanDropdown));
         actionplanDropdown.click();
-        getDriver().findElement(By.xpath(String.format("//span[contains(text(),'%s')]", templateName ))) .click();
+        getDriver("evbyminsd2156.minsk.epam.com/spin/searchControlPoint.do?primaryKey=2021826").findElement(By.xpath(String.format("//span[contains(text(),'%s')]", templateName ))) .click();
         return new AddCustomerAMPage();
     }
 

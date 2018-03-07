@@ -1,5 +1,6 @@
 package com.epam.cdp.slon.test;
 
+import com.epam.cdp.slon.service.WebdriverHolder;
 import com.epam.cdp.slon.util.TestConfig;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
@@ -36,7 +37,7 @@ public abstract class BaseTest {
 
         DesiredCapabilities capabillities = DesiredCapabilities.firefox();
 
-        driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabillities);
+        new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabillities);
         capabillities.setBrowserName("firefox");
         wait = new WebDriverWait(driver, 6000);
         driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
