@@ -12,15 +12,13 @@ public class ControlPoint extends BasePage {
     public ControlPoint(WebDriver driver) {
     }
 
-    public void controlpointPage() {
 
-        getDriver("evbyminsd2156.minsk.epam.com/spin/searchControlPoint.do?primaryKey=2021826");
 
-    }
-    public void selectDays(int startDay, int endDay){
 
-        WebElement draggable = getDriver("evbyminsd2156.minsk.epam.com/spin/searchControlPoint.do?primaryKey=2021826").findElement(By.xpath(String.format("//td[text()='%d']",startDay)));
-        WebElement dropable = getDriver("evbyminsd2156.minsk.epam.com/spin/searchControlPoint.do?primaryKey=2021826").findElement(By.xpath(String.format("//td[text()='%d']",endDay)));
+    public void selectDays(int startDay, int endDay, String getControlPointUrl){
+
+        WebElement draggable = getDriver(getControlPointUrl).findElement(By.xpath(String.format("//td[text()='%d']",startDay)));
+        WebElement dropable = getDriver(getControlPointUrl).findElement(By.xpath(String.format("//td[text()='%d']",endDay)));
 
         new Actions(getDriver("evbyminsd2156.minsk.epam.com/spin/searchControlPoint.do?primaryKey=2021826")).dragAndDrop(draggable, dropable).build().perform();
 

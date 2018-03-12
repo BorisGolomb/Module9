@@ -5,7 +5,6 @@ import com.epam.cdp.slon.model.UserFactory;
 import com.epam.cdp.slon.page.ControlPoint;
 import com.epam.cdp.slon.page.LoginPage;
 import com.epam.cdp.slon.util.TestConfig;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -18,9 +17,10 @@ public class HubTest extends BaseTest {
         User user = UserFactory.getUser();
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login(user.getUsername(), user.getPassword());
+        String getControlPointUrl = TestConfig.getControlPointUrl();
         ControlPoint controlPoint;
         controlPoint = new ControlPoint(driver);
-        controlPoint.selectDays(5, 10);
+        controlPoint.selectDays(5, 10, getControlPointUrl);
         int startDay = controlPoint.getStartDay();
         int endDay = controlPoint.getEndDay();
 

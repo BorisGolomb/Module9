@@ -5,4 +5,8 @@ public class TestConfig {
 //        return System.getProperty("sut.url");
         return Config.getProperty("sut.url");
     }
+    public static String getControlPointUrl(){
+//        return System.getProperty("hub.url");
+        return Config.getProperty("hub.url");
+    }
 }
