@@ -7,17 +7,6 @@ import org.openqa.selenium.interactions.Actions;
 public class NavigationPage extends BasePage {
 
 
-//    @FindBy(xpath = "//div[text()='SupplyOn Services']/ancestor::li[@class='navBarTopMenuItemContainer']")
-//    private WebElement supplierButton;
-
-//    public AddCustomerAMPage(WebDriver driver) {
-//        super(driver);
-//    }
-
-//    public void SearchSupplier() {
-//        supplierButton.click();
-//        return;
-//    }
 
     public SupplyOnServices openSupplyonServices() {
 
@@ -29,7 +18,7 @@ public class NavigationPage extends BasePage {
 
     public class SupplyOnServices {
         public CreateApPage openActioManagement() {
-           getDriver().findElement(By.xpath("//div[@templateid='navbarSubmenuItemText'][text()='Action Management']")).click();
+            getDriver().findElement(By.xpath("//div[@templateid='navbarSubmenuItemText'][text()='Action Management']")).click();
             return new CreateApPage();
         }
     }

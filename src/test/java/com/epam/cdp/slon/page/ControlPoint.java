@@ -9,16 +9,12 @@ import org.openqa.selenium.interactions.Actions;
 public class ControlPoint extends BasePage {
 
 
-    public ControlPoint(WebDriver driver) {
-    }
 
 
+    public void selectDays(int startDay, int endDay, String getControlPointUrl) {
 
-
-    public void selectDays(int startDay, int endDay, String getControlPointUrl){
-
-        WebElement draggable = getDriver().findElement(By.xpath(String.format("//td[text()='%d']",startDay)));
-        WebElement dropable = getDriver().findElement(By.xpath(String.format("//td[text()='%d']",endDay)));
+        WebElement draggable = getDriver().findElement(By.xpath(String.format("//td[text()='%d']", startDay)));
+        WebElement dropable = getDriver().findElement(By.xpath(String.format("//td[text()='%d']", endDay)));
 
         new Actions(getDriver()).dragAndDrop(draggable, dropable).build().perform();
 
